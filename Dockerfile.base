@@ -1,0 +1,40 @@
+FROM jupyter/all-spark-notebook:latest 
+
+MAINTAINER saurabh jha <sjha8@illinois.edu>
+
+# install prereqs
+USER root 
+RUN apt-get update
+RUN apt-get install -y software-properties-common
+RUN apt-get update
+RUN apt-get install -y git build-essential linux-libc-dev
+RUN apt-get install -y cmake cmake-gui 
+RUN apt-get install -y libusb-1.0-0-dev libusb-dev libudev-dev
+RUN apt-get install -y mpi-default-dev openmpi-bin openmpi-common  
+RUN apt-get install -y libflann1.8 libflann-dev
+RUN apt-get install -y libeigen3-dev
+RUN apt-get install -y libboost-all-dev
+RUN apt-get install -y libvtk5.10-qt4 libvtk5.10 libvtk5-dev
+RUN apt-get install -y libqhull* libgtest-dev
+RUN apt-get install -y freeglut3-dev pkg-config
+RUN apt-get install -y libxmu-dev libxi-dev 
+RUN apt-get install -y mono-complete
+RUN apt-get install -y qt-sdk openjdk-8-jdk openjdk-8-jre
+RUN apt-get install -y openssh-client
+
+
+# get pcl
+RUN apt-get update
+RUN git clone https://github.com/PointCloudLibrary/pcl.git ~/pcl
+RUN TEMP_PATH=$PATH
+RUN export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+RUN apt-get remove -y libpq5
+# install pcl
+RUN mkdir ~/pcl/release
+RUN cd ~/pcl/release && cmake -DCMAKE_INSTALL_PREFIX=/usr \
+           -DBUILD_apps=ON -DBUILD_examples=ON \
+           -DCMAKE_INSTALL_PREFIX=/usr ~/pcl
+RUN cd ~/pcl/release && make -j20
+RUN cd ~/pcl/release && make install
+RUN export PATH=${TEMP_PATH}
+USER jovyan
