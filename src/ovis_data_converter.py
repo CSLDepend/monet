@@ -22,12 +22,12 @@ def get_spark_context():
     conf = pyspark.SparkConf()
     conf.setMaster("local[40]")#"mesos://10.0.1.201:5050"
     # conf.set("spark.cores.max", "44")
-    conf.set("spark.driver.memory", "100g")
-    conf.set("spark.executor.memory", "300g")
+    conf.set("spark.driver.memory", "10g")
+    conf.set("spark.executor.memory", "40g")
     conf.set("spark.core.connection.ack.wait.timeout", "1200")
     conf.set("spark.rpc.netty.dispatcher.numThreads","4")
-    conf.set("spark.driver.maxResultSize", "200g")
-    conf.set("spark.python.worker.memory", "5g")
+    conf.set("spark.driver.maxResultSize", "10g")
+    # conf.set("spark.python.worker.memory", "5g")
     conf.setAppName('Monet-hello')
     # create the context
     sc = pyspark.SparkContext(conf=conf)
