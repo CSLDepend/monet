@@ -1,6 +1,6 @@
-FROM jupyter/all-spark-notebook:latest 
+FROM ubuntu:xenial 
 
-MAINTAINER saurabh jha <sjha8@illinois.edu>
+MAINTAINER archit patke <apatke@illinois.edu>
 
 # install prereqs
 USER root 
@@ -37,4 +37,3 @@ RUN cd ~/pcl/release && cmake -DCMAKE_INSTALL_PREFIX=/usr \
 RUN cd ~/pcl/release && make -j20
 RUN cd ~/pcl/release && make install
 RUN export PATH=${TEMP_PATH}
-USER jovyan
