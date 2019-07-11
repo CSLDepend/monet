@@ -10,6 +10,7 @@ rawDir = '/data/'
 parquetDir = '/outputs/processed/'
 pcdDir = '/outputs/pcd/'
 segmentDir = '/outputs/segment/'
+regionDir = '/outputs/region/'
 descriptorFile = '/monet/src/HEADER.20160115-'
 
 # run the steps:
@@ -18,13 +19,15 @@ descriptorFile = '/monet/src/HEADER.20160115-'
 
 def main():
     date = sys.argv[1]
-    timestamp = str(get_unix_time(date))
+    timestamp = str(get_unix_time(date)+18000) #accounting for timezone difference
     
     #create directory structure
     os.system('mkdir -p '+parquetDir)
     os.system('mkdir -p '+pcdDir)
     os.system('mkdir -p '+segmentDir)
-    os.system('mkdir '+pcdDir+date)
+    os.system('mkdir -p '+regionDir)
+    os.system('mkdir -p '+pcdDir+date)
+    os.system('mkdir -p '+segmentDir+date)
         
     #raw ovis to parquet convert
     os.system('python /monet/src/ovis_data_converter.py %s %s %s %s'%(rawDir,parquetDir,descriptorFile,date))

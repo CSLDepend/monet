@@ -8,6 +8,7 @@ import argparse
 #initialize directory structure
 pcdDir = '/outputs/pcd/'
 segmentDir = '/outputs/segment/'
+regionDir = '/outputs/region/'
 curDir = '/monet/src/'
 
 
@@ -20,10 +21,11 @@ def main():
     timestamp = str(get_unix_time(date))
     
     #pcd to segment
-    os.system('python3 /monet/src/rgrunner_unique.py single 20 %s 2 4 4 2 20 %s %s'%(pcdDir+date,segmentDir[:-1],curDir))
+    os.system('python3 /monet/src/segmentation.py %s %s'%(pcdDir+date+'/',segmentDir+date+'/'))
+    os.system('cat %s/* >> %s'%(segmentDir+date,segmentDir+'regions_'+date))
     
     #segment to regions
-    
+    os.system('python3 /monet/src/segment_to_region.py %s %s'%(segmentDir+'regions_'+date,regionDir+date))
 
 if __name__ == "__main__":
     main()
