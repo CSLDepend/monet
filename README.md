@@ -1,6 +1,6 @@
 # README MONET Blue Waters
 
-## Creating docker 
+## Creating Docker 
 Build dockers for using PCL (Point Cloud Library) and Spark using:    
 `
 ./create_docker.sh
