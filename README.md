@@ -18,4 +18,11 @@ Arguments:
 * *host-output-directory* :  directory to output region files
 * *date* : date that needs to be proccessed (YYYYMMDD format)
 
+## Output Format
+`*host-output-directory*\region` contains output of the region growth segmentation and region duration algorithms.
+
+There are two CSVs in the output dir:
+* `YYYYMMDD` : Contains information about the congestion region size, duration and average stall values.
+* `YYYYMMDD_edges` : Contains information about transition between regions.
+
 
