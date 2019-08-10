@@ -2,16 +2,16 @@
 
 ## Creating docker 
 Build dockers for using PCL (Point Cloud Library) and Spark. Run the following command:
-```sh
-$ ./create_docker.sh
-```
+`
+./create_docker.sh
+`
 
 ## Launch Monet Batch Processing 
 Runs raw OVIS files through the data processing pipeling and produces congestion regions.  
 Execute the following command .     
-        ```sh
-        $ ./launch_batch_processing.sh <host-data-directory> <host-output-directory> <date>
-        ```
+        `
+        ./launch_batch_processing.sh <host-data-directory> <host-output-directory> <date>
+        `
 Arguments:
 * <host-data-directory> : directory containing OVIS files in YYYYMMDD format
 * <host-output-directory>: directory to output region files
