@@ -2,8 +2,8 @@
 
 ## Creating docker 
 execute
-```bash
-./create_docker.sh
+```sh
+$ ./create_docker.sh
 ```
 
 ## Launch Monet Batch Processing 
