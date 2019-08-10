@@ -11,7 +11,8 @@ Runs raw OVIS files through the data processing pipeling and produces congestion
 Execute the following command:        
         `
         ./launch_batch_processing.sh [host-data-directory] [host-output-directory] [date]
-        `   
+        `    
+        
 Arguments:    
 * *host-data-directory* : directory containing OVIS files in YYYYMMDD format
 * *host-output-directory* :  directory to output region files
