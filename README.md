@@ -8,7 +8,7 @@ $ ./create_docker.sh
 
 ## Launch Monet Batch Processing 
 Runs raw OVIS files through the data processing pipeling and produces congestion regions.  
-Execute the following command
+Execute the following command .     
         ```sh
         $ ./launch_batch_processing.sh <host-data-directory> <host-output-directory> <date>
         ```
