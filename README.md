@@ -2,9 +2,9 @@
 
 ## Creating docker 
 execute
-`
+```bash
 ./create_docker.sh
-`
+```
 
 ## Launch Monet Batch Processing 
 runs clustering algorithm on raw dataset and produces segments in /outputs (docker directory)
