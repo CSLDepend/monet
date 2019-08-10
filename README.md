@@ -12,7 +12,7 @@ Execute the following command:
         `
         ./launch_batch_processing.sh [host-data-directory] [host-output-directory] [date]
         `   
-Arguments:
+Arguments:    
 * *host-data-directory* : directory containing OVIS files in YYYYMMDD format
 * *host-output-directory* :  directory to output region files
 * *date* : date that needs to be proccessed (YYYYMMDD format)
