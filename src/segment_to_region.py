@@ -1,4 +1,11 @@
 #!/usr/bin/env pypy3
+
+# Copyright (c) 2019 DEPEND Research Group at
+# University of Illinois, Urbana Champaign (UIUC)
+# This work is licensed under the terms of the UIUC/NCSA license.
+# For a copy, see https://opensource.org/licenses/NCSA.
+
+
 #Recommended to run with pypy3 for faster performance
 from UF import *
 import os
