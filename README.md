@@ -23,6 +23,6 @@ Arguments:
 
 There are two CSVs in the output dir:
 * `YYYYMMDD` : Contains information about the congestion region size, duration and average stall values.
-* `YYYYMMDD_edges` : Contains information about transition between regions.
+* `YYYYMMDD_edges` : Contains information about transitions between regions.
 
 
