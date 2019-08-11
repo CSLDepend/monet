@@ -1,4 +1,4 @@
-# README MONET Blue Waters
+# MONET Blue Waters
 
 ## Creating Docker 
 Build dockers for using PCL (Point Cloud Library) and Spark using:    
@@ -24,5 +24,3 @@ Arguments:
 There are two CSVs in the output dir:
 * `YYYYMMDD` : Contains information about the congestion region size, duration and average stall values.
 * `YYYYMMDD_edges` : Contains information about transitions between regions.
-
-
