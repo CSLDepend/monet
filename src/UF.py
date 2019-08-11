@@ -1,3 +1,8 @@
+# Copyright (c) 2019 DEPEND Research Group at
+# University of Illinois, Urbana Champaign (UIUC)
+# This work is licensed under the terms of the UIUC/NCSA license.
+# For a copy, see https://opensource.org/licenses/NCSA.
+
 class UF:
     """An implementation of union find data structure.
     It uses weighted quick union by rank with path compression.
