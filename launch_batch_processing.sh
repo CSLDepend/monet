@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# Copyright (c) 2019 DEPEND Research Group at
+# University of Illinois, Urbana Champaign (UIUC)
+# This work is licensed under the terms of the UIUC/NCSA license.
+# For a copy, see https://opensource.org/licenses/NCSA.
+
 args=( $@ )
 arglen=${#args[@]}
 if [ $arglen -ne 3 ]
