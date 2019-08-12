@@ -1,9 +1,15 @@
 # MONET Blue Waters
 
-## Creating Docker 
-Build dockers for using PCL (Point Cloud Library) and Spark using:    
+## Create Docker 
+Build dockers for PCL (Point Cloud Library) and Spark using:    
 `
 ./create_docker.sh
+`
+
+## Build PCL Segmentation
+Build exceutable for custom PCL region growth segmentation
+`
+./build_pcl.sh
 `
 
 ## Launch Monet Batch Processing 
