@@ -10,13 +10,14 @@ Build dockers for using PCL (Point Cloud Library) and Spark using:
 Runs raw OVIS files through the data processing pipeling and produces congestion regions.  
 Execute the following command:        
         `
-        ./launch_batch_processing.sh [host-data-directory] [host-output-directory] [date]
+        ./launch_batch_processing.sh [host-data-directory] [host-output-directory] [date] [timestamp]
         `    
         
 Arguments:    
 * *host-data-directory* : directory containing OVIS files in YYYYMMDD format
 * *host-output-directory* :  directory to output region files
 * *date* : date that needs to be proccessed (YYYYMMDD format)
+* *timestamp* : starting timestamp
 
 ## Output Format
 `[host-output-directory]/region` contains output of the region growth segmentation and region duration algorithms.
