@@ -9,7 +9,7 @@ Build dockers for PCL (Point Cloud Library) and Spark using:
 ## Build PCL Segmentation
 Build executable for custom PCL region growth segmentation:   
 `
-./build_pcl.sh
+./build_PCL.sh
 `
 
 ## Launch Monet Batch Processing 
