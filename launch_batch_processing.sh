@@ -7,9 +7,9 @@
 
 args=( $@ )
 arglen=${#args[@]}
-if [ $arglen -ne 3 ]
+if [ $arglen -ne 4 ]
 then
-	echo "Ensure arguments to be: <data-dir> <output-dir> <date>"
+	echo "Ensure arguments to be: <data-dir> <output-dir> <date> <timestamp>"
 	exit 1
 fi
 

@@ -9,8 +9,8 @@
 
 import os
 import sys
-from unix_timestamp import *
 import argparse
+import shutil
 
 #initialize directory structure
 pcdDir = '/outputs/pcd/'
@@ -25,11 +25,15 @@ curDir = '/monet/src/'
 
 def main():
     date = sys.argv[1]
-    timestamp = str(get_unix_time(date))
     
     #pcd to segment
     os.system('python3 /monet/src/segmentation.py %s %s'%(pcdDir+date+'/',segmentDir+date+'/'))
-    os.system('cat %s/* >> %s'%(segmentDir+date,segmentDir+'regions_'+date))
+
+    #concatenate all files into one
+    with open(segmentDir+'regions_'+date,'wb') as wfd:
+        for f in [segmentDir+date+'/'+'{:04}'.format(i) for i in range(1,1441)]:
+            with open(f,'rb') as fd:
+                shutil.copyfileobj(fd, wfd)
     
     #segment to regions
     os.system('python3 /monet/src/segment_to_region.py %s %s'%(segmentDir+'regions_'+date,regionDir+date))

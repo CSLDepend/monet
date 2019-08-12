@@ -1,3 +1,0 @@
-/root/src/pcl/BUILD/CMakeFiles/rebuild_cache.dir
-/root/src/pcl/BUILD/CMakeFiles/edit_cache.dir
-/root/src/pcl/BUILD/CMakeFiles/rgselect_unique.dir

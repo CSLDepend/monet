@@ -25,7 +25,7 @@ descriptorFile = '/monet/src/HEADER.20160115-'
 
 def main():
     date = sys.argv[1]
-    timestamp = str(get_unix_time(date)+18000) #accounting for timezone difference
+    timestamp = sys.argv[2]
     
     #create directory structure
     os.system('mkdir -p '+parquetDir)

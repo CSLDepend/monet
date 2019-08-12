@@ -223,7 +223,12 @@ def create_region_from_segment(args):
     find_times()
     csvData = [['Region','Size', 'Avg_Credit', 'Avg_Inq', 'Time']]
 
-    for region in region_to_time_finalg:
+    all_regions = set()
+    for (region,region_o) in graph:
+        all_regions.add(region)
+        all_regions.add(region_o)
+        
+    for region in all_regions:
         csvData.append([region,region_to_size_finalg[region], region_to_stall_finalg[region][0], region_to_stall_finalg[region][1],
                         region_to_time_finalg[region]])
 
