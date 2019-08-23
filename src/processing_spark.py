@@ -16,7 +16,7 @@ parquetDir = '/outputs/processed/'
 pcdDir = '/outputs/pcd/'
 segmentDir = '/outputs/segment/'
 regionDir = '/outputs/region/'
-descriptorFile = '/monet/src/HEADER.20160115-'
+descriptorFile = '/monet/src/HEADER'
 
 # run the steps:
 # 1. raw ovis -> parquet
