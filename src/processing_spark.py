@@ -8,7 +8,6 @@
 #import python libraries
 import os
 import sys
-from unix_timestamp import *
 import argparse
 
 #initialize directory structure
