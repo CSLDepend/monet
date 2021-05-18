@@ -33,7 +33,10 @@ RUN apt-get remove -y libpq5
 RUN mkdir ~/pcl/release
 RUN cd ~/pcl/release && cmake -DCMAKE_INSTALL_PREFIX=/usr \
            -DBUILD_apps=ON -DBUILD_examples=ON \
-           -DCMAKE_INSTALL_PREFIX=/usr ~/pcl
+           -DCMAKE_INSTALL_PREFIX=/usr ~/pcl \
+           -DCMAKE_BUILD_TYPE=Release \
+           -DCMAKE_CXX_FLAGS="-O2"
+
 RUN cd ~/pcl/release && make -j20
 RUN cd ~/pcl/release && make install
 RUN export PATH=${TEMP_PATH}

@@ -51,7 +51,6 @@
 #include <list>
 #include <cmath>
 #include <time.h>
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename PointT, typename NormalT>
 pcl::RegionGrowingBW<PointT, NormalT>::RegionGrowingBW () :
@@ -349,6 +348,7 @@ pcl::RegionGrowingBW<PointT, NormalT>::prepareForSegmentation ()
   return (true);
 }
 
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename PointT, typename NormalT> void
 pcl::RegionGrowingBW<PointT, NormalT>::findPointNeighbours ()
@@ -374,10 +374,15 @@ pcl::RegionGrowingBW<PointT, NormalT>::findPointNeighbours ()
     {
       neighbours.clear ();
       int point_index = (*indices_)[i_point];
-      if (!pcl::isFinite (input_->points[point_index]))
-        continue;
+     // if (!pcl::isFinite (input_->points[point_index])) #not supported in recent version
+     //   continue;
+     try{
       search_->radiusSearch(input_->points[point_index], 2.1, neighbours, distances, 0);
       point_neighbours_[point_index].swap (neighbours);
+     }
+     catch(...){
+	     std::cerr<<"not handled in new pcl version"<<std::endl;
+     }
     }
   }
 }
